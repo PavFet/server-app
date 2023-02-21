@@ -17,5 +17,8 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    '@typescript-eslint/naming-convention': [0],
+    '@typescript-eslint/indent': [0],
+    'import/prefer-default-export': [0]
   },
 };
