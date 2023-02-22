@@ -9,7 +9,7 @@ type CarModel = {
     'weight_in_lbs': number,
     'acceleration': number
   },
-  'year': string,
+  'year': number,
   'origin': string,
   'images': string[]
 };

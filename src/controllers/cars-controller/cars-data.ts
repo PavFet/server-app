@@ -10,7 +10,7 @@ const cars: CarModel[] = [
       weight_in_lbs: 3504,
       acceleration: 12,
     },
-    year: '1972',
+    year: 1972,
     origin: 'USA',
     images: [
       'http://localhost:5009/chevrolet-chevelle-malibu.jpg',
@@ -29,7 +29,7 @@ const cars: CarModel[] = [
       weight_in_lbs: 3693,
       acceleration: 11.5,
     },
-    year: '1964',
+    year: 1964,
     origin: 'USA',
     images: [
       'http://localhost:5009/buick-skylark.jpg',
@@ -48,7 +48,7 @@ const cars: CarModel[] = [
       weight_in_lbs: 3436,
       acceleration: 11,
     },
-    year: '1971',
+    year: 1971,
     origin: 'USA',
     images: [
       'http://localhost:5009/1972-plymouth-satellite-sebring.jpg',
@@ -67,7 +67,7 @@ const cars: CarModel[] = [
       weight_in_lbs: 3433,
       acceleration: 12,
     },
-    year: '1969',
+    year: 1969,
     origin: 'USA',
     images: [
       'http://localhost:5009/1967-amc-rambler-rebel-sst.jpg',
@@ -86,7 +86,7 @@ const cars: CarModel[] = [
       weight_in_lbs: 3449,
       acceleration: 10.5,
     },
-    year: '1974',
+    year: 1974,
     origin: 'USA',
     images: [
       'http://localhost:5009/800px-1970_ford_torino_cobra_sportsroof_chiolero.jpg',
@@ -106,7 +106,7 @@ const cars: CarModel[] = [
       acceleration: 10,
     },
 
-    year: '1966',
+    year: 1966,
     origin: 'USA',
     images: [
       'http://localhost:5009/1966-ford-galaxie-500.jpg',
@@ -125,7 +125,7 @@ const cars: CarModel[] = [
       weight_in_lbs: 4354,
       acceleration: 9,
     },
-    year: '1958',
+    year: 1958,
     origin: 'USA',
     images: [
       'http://localhost:5009/1958-chevrolet-impala-sport-coupe.jpg',
@@ -144,7 +144,7 @@ const cars: CarModel[] = [
       weight_in_lbs: 4312,
       acceleration: 8.5,
     },
-    year: '1967',
+    year: 1967,
     origin: 'USA',
     images: [
       'http://localhost:5009/Praha_Chodov_U_Kunratickeho_lesa_Plymouth_Fury_III_b.jpg',
@@ -163,7 +163,7 @@ const cars: CarModel[] = [
       weight_in_lbs: 4312,
       acceleration: 8.5,
     },
-    year: '1968',
+    year: 1968,
     origin: 'EU',
     images: [
       'http://localhost:5009/porsche911.jpg',
@@ -182,7 +182,7 @@ const cars: CarModel[] = [
       weight_in_lbs: 4312,
       acceleration: 8.5,
     },
-    year: '1967',
+    year: 1967,
     origin: 'EU',
     images: [
       'http://localhost:5009/lambo.jpg',
@@ -201,7 +201,7 @@ const cars: CarModel[] = [
       weight_in_lbs: 4312,
       acceleration: 8.5,
     },
-    year: '1962',
+    year: 1962,
     origin: 'EU',
     images: [
       'http://localhost:5009/volvo.jpg',
@@ -220,7 +220,7 @@ const cars: CarModel[] = [
       weight_in_lbs: 4312,
       acceleration: 8.5,
     },
-    year: '1966',
+    year: 1966,
     origin: 'EU',
     images: [
       'http://localhost:5009/ferra.jpg',
@@ -238,7 +238,7 @@ const cars: CarModel[] = [
       weight_in_lbs: 4312,
       acceleration: 8.5,
     },
-    year: '1967',
+    year: 1967,
     origin: 'USA',
     images: [
       'https://www.gallery-aaldering.com/wp-content/uploads/gallery/27869472/27869472-60.jpg',
@@ -258,7 +258,7 @@ const cars: CarModel[] = [
       weight_in_lbs: 4312,
       acceleration: 8.5,
     },
-    year: '1970',
+    year: 1970,
     origin: 'EU',
     images: [
       'https://erclassics.b-cdn.net/media/catalog/product/cache/2/thumbnail/1920x/17f82f742ffe127f42dca9de82fb58b1/j/a/jaguar-e-type-1970-j1574-043.jpg',

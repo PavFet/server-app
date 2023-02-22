@@ -1,5 +1,5 @@
 import { RequestHandler } from 'express';
-import cars from '../cars-data';
+import cars from './cars-data';
 
 export const getCars: RequestHandler<
 {}, // Parametrai
