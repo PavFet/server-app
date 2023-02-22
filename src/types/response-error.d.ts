@@ -1,3 +1,4 @@
   type ResponseError = {
-    errorMsg: string
+    error: string,
+    errors?: string[]
   };
