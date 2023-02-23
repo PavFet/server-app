@@ -29,10 +29,7 @@ export const carDataValidationSchema: yup.ObjectSchema<CarData> = yup.object({
         .test(
         'isAcceleration',
         'incorrect acceleration format',
-        (val) => {
-          if (val === undefined) return true;
-            return Number(val.toFixed(1)) === val;
-},
+        (val) => Number(val.toFixed(1)) === val,
     ),
 
         cylinders: yup.number()
