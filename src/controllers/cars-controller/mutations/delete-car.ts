@@ -21,5 +21,5 @@ CarModel | ResponseError,
 
  const [splicedArray] = cars.splice(foundCarIndex, 1);
 
-  res.status(200).json(splicedArray);
+  res.status(204).json(splicedArray);
 };

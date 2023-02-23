@@ -1,6 +1,17 @@
-export * from './queries/get-cars';
-export * from './queries/get-car';
+import express from 'express';
+import { createCar } from './mutations/create-car';
+import { deleteCar } from './mutations/delete-car';
+import { upadateCar } from './mutations/update-car';
+import { getCar } from './queries/get-car';
+import { getCars } from './queries/get-cars';
 
-export * from './mutations/create-car';
-export * from './mutations/update-car';
-export * from './mutations/delete-car';
+const carsRouter = express.Router();
+
+carsRouter.get('/', getCars);
+carsRouter.get('/:id', getCar);
+
+carsRouter.post('/', createCar);
+carsRouter.delete('/:id', deleteCar);
+carsRouter.patch('/:id', upadateCar);
+
+export default carsRouter;

@@ -28,7 +28,7 @@ export const carDataValidationSchema: yup.ObjectSchema<CarData> = yup.object({
         .positive('acceleration must be positive')
         .test(
         'isAcceleration',
-        'icorrect price format',
+        'incorrect acceleration format',
         (val) => {
           if (val === undefined) return true;
             return Number(val.toFixed(1)) === val;

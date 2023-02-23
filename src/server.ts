@@ -1,7 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import config from './config';
-import carsRouter from './routers/cars-router';
+import carsRouter from './controllers/cars-controller';
 
 const server = express();
 
