@@ -231,11 +231,3 @@ const cars: CarModel[] = [
 ];
 
 export default cars;
-
-// eslint-disable-next-line array-callback-return
-const technicalChar = cars.map((car) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-  `(${car.technical_characteristics.miles_per_gallon}, ${car.technical_characteristics.cylinders})`;
-});
-
-console.log(technicalChar);
