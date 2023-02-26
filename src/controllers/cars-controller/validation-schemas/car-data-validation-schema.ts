@@ -22,17 +22,11 @@ export const carDataValidationSchema: yup.ObjectSchema<CarData> = yup.object({
         'incorrect acceleration format',
         (val) => Number(val.toFixed(1)) === val,
     ),
-
-      cylinders: cylindersSchema
-        .required('cylinders is required'),
-      displacement: displacementSchema
-        .required('displacement is required'),
-      horsepower: horsepowerSchema
-        .required('horsepower is required'),
-      miles_per_gallon: milesPerGallonSchema
-        .required('miles per gallon is required'),
-      weight_in_lbs: weightInLbsSchema
-        .required('weight in lbs is required'),
+      cylinders: cylindersSchema.required('cylinders is required'),
+      displacement: displacementSchema.required('displacement is required'),
+      horsepower: horsepowerSchema.required('horsepower is required'),
+      miles_per_gallon: milesPerGallonSchema.required('miles per gallon is required'),
+      weight_in_lbs: weightInLbsSchema.required('weight in lbs is required'),
 
     }),
 }).strict(true);
