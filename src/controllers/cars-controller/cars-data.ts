@@ -228,44 +228,14 @@ const cars: CarModel[] = [
       'http://localhost:5009/ferra3.jpg',
     ],
   },
-  {
-    name: 'Ford Mustang 390',
-    technical_characteristics: {
-      miles_per_gallon: 14,
-      cylinders: 8,
-      displacement: 440,
-      horsepower: 215,
-      weight_in_lbs: 4312,
-      acceleration: 8.5,
-    },
-    year: 1967,
-    origin: 'USA',
-    images: [
-      'https://www.gallery-aaldering.com/wp-content/uploads/gallery/27869472/27869472-60.jpg',
-      'https://www.tradeclassics.com/wp-content/uploads/2022/03/1967-Ford-Mustang-402.jpg',
-      'https://cdn.dealeraccelerate.com/cam/34/4625/292492/1920x1440/1967-ford-mustang-hardtop',
-      'https://images.lifestyleasia.com/wp-content/uploads/sites/3/2022/03/18132140/hero-image-mustang.jpg',
-    ],
-    id: 'VPyxUhZ',
-  },
-  {
-    name: 'jaguar xj6',
-    technical_characteristics: {
-      miles_per_gallon: 14,
-      cylinders: 8,
-      displacement: 440,
-      horsepower: 215,
-      weight_in_lbs: 4312,
-      acceleration: 8.5,
-    },
-    year: 1970,
-    origin: 'EU',
-    images: [
-      'https://erclassics.b-cdn.net/media/catalog/product/cache/2/thumbnail/1920x/17f82f742ffe127f42dca9de82fb58b1/j/a/jaguar-e-type-1970-j1574-043.jpg',
-      'https://cdn.dealeraccelerate.com/stlouis/1/82/20835/1920x1440/1970-jaguar-e-type-series-ii',
-    ],
-    id: 'nZ-8yok',
-  },
 ];
 
 export default cars;
+
+// eslint-disable-next-line array-callback-return
+const technicalChar = cars.map((car) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+  `(${car.technical_characteristics.miles_per_gallon}, ${car.technical_characteristics.cylinders})`;
+});
+
+console.log(technicalChar);

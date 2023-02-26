@@ -1,16 +1,16 @@
-create table technicalCharacteristics (
+create table bvugtsxw5tbh0ey2c4c5.technicalCharacteristics (
   id int1 unsigned primary key auto_increment,
   miles_per_gallon int1 not null,
   cylinders int1 not null,
-  displacement int1 not null,
-  horsepower int1 not null,
-  weight_in_lbs int1 not null,
+  displacement int2 not null,
+  horsepower int2 not null,
+  weight_in_lbs int2 not null,
   acceleration float4 not null,
   createdAt timestamp default current_timestamp,
   updateddAt timestamp default current_timestamp on update current_timestamp
 );
 
-create table cars (
+create table bvugtsxw5tbh0ey2c4c5.cars (
   id int1 unsigned primary key auto_increment,
   name varchar(256) not null,
   technicalCharacteristicsId int1 unsigned not null unique,
@@ -21,7 +21,7 @@ create table cars (
   FOREIGN KEY (technicalCharacteristicsId) REFERENCES technicalCharacteristics(id)
 );
 
-create table images (
+create table bvugtsxw5tbh0ey2c4c5.images (
   id int1 unsigned primary key auto_increment,
   src  varchar(512) not null,
   carId int1 unsigned not null,
