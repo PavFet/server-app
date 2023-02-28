@@ -1,5 +1,5 @@
-type CarModel = {
-  'id': string,
+type PrivateCarModel = {
+  'id': number,
   'name': string,
   'technical_characteristics': {
     'miles_per_gallon': number,
@@ -13,3 +13,5 @@ type CarModel = {
   'origin': string,
   'images': string[]
 };
+
+type CarModel = PrivateCarModel & RowDataPacket;

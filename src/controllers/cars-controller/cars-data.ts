@@ -1,6 +1,6 @@
 const cars: CarModel[] = [
   {
-    id: '1',
+    id: 1,
     name: 'chevrolet chevelle malibu',
     technical_characteristics: {
       miles_per_gallon: 18,
@@ -19,7 +19,7 @@ const cars: CarModel[] = [
     ],
   },
   {
-    id: '2',
+    id: 2,
     name: 'buick skylark 320',
     technical_characteristics: {
       miles_per_gallon: 15,
@@ -38,7 +38,7 @@ const cars: CarModel[] = [
     ],
   },
   {
-    id: '3',
+    id: 3,
     name: 'plymouth satellite',
     technical_characteristics: {
       miles_per_gallon: 18,
@@ -57,7 +57,7 @@ const cars: CarModel[] = [
     ],
   },
   {
-    id: '4',
+    id: 4,
     name: 'amc rebel sst',
     technical_characteristics: {
       miles_per_gallon: 16,
@@ -76,7 +76,7 @@ const cars: CarModel[] = [
     ],
   },
   {
-    id: '5',
+    id: 5,
     name: 'ford torino',
     technical_characteristics: {
       miles_per_gallon: 17,
@@ -95,7 +95,7 @@ const cars: CarModel[] = [
     ],
   },
   {
-    id: '6',
+    id: 6,
     name: 'ford galaxie 500',
     technical_characteristics: {
       miles_per_gallon: 15,
@@ -115,7 +115,7 @@ const cars: CarModel[] = [
     ],
   },
   {
-    id: '7',
+    id: 7,
     name: 'chevrolet impala',
     technical_characteristics: {
       miles_per_gallon: 14,
@@ -134,7 +134,7 @@ const cars: CarModel[] = [
     ],
   },
   {
-    id: '8',
+    id: 8,
     name: 'plymouth fury iii',
     technical_characteristics: {
       miles_per_gallon: 14,
@@ -153,7 +153,7 @@ const cars: CarModel[] = [
     ],
   },
   {
-    id: '9',
+    id: 9,
     name: 'Porsche 911',
     technical_characteristics: {
       miles_per_gallon: 14,
@@ -172,7 +172,7 @@ const cars: CarModel[] = [
     ],
   },
   {
-    id: '10',
+    id: 10,
     name: 'Lamborghini Miura',
     technical_characteristics: {
       miles_per_gallon: 14,
@@ -191,7 +191,7 @@ const cars: CarModel[] = [
     ],
   },
   {
-    id: '11',
+    id: 11,
     name: 'Volvo P1800 S',
     technical_characteristics: {
       miles_per_gallon: 14,
@@ -210,7 +210,7 @@ const cars: CarModel[] = [
     ],
   },
   {
-    id: '12',
+    id: 12,
     name: 'Ferrari 275 GTB/2',
     technical_characteristics: {
       miles_per_gallon: 14,
