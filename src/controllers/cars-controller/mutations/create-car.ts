@@ -1,7 +1,6 @@
 import { RequestHandler } from 'express';
 import * as yup from 'yup';
-import createId from 'uniqid';
-import cars from '../cars-data';
+import CarService from '../../../services/cars-services';
 import { CarData } from '../types';
 import { carDataValidationSchema } from '../validation-schemas/car-data-validation-schema';
 
@@ -10,13 +9,13 @@ export const createCar: RequestHandler<
 CarModel | ResponseError, // Atsakymo tipas
 CarData, // Body - gaunami duomenys
 {} // QueryParams - duomenis siunciant GET uzklausas, pvz: ?min-18max=18
-> = (req, res) => {
+> = async (req, res) => {
   try {
-    const carData = carDataValidationSchema.validateSync(req.body, { abortEarly: false });
-    const newCar: CarModel = { id: createId(), ...carData };
-    cars.push(newCar);
+    const carData: CarData = carDataValidationSchema
+      .validateSync(req.body, { abortEarly: false });
 
-    res.status(201).json(newCar);
+    const createdCar = await CarService.createCar(carData);
+    res.status(201).json(createdCar);
   } catch (err) {
     if (err instanceof yup.ValidationError) {
       const manyErrors = err.errors.length > 1;
