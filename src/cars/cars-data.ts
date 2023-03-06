@@ -1,4 +1,4 @@
-const cars: CarModel[] = [
+const cars: CarViewModel[] = [
   {
     id: 1,
     name: 'chevrolet chevelle malibu',

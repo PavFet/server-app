@@ -22,7 +22,6 @@ if (
   || DB_PASSWORD === undefined
   || DB_PORT === undefined
   || SERVER_PORT === undefined
-
   ) {
   throw new Error("Please define constants in '.env' file");
 }

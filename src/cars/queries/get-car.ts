@@ -1,9 +1,10 @@
 import { RequestHandler } from 'express';
-import CarService from '../../../services/cars-services';
+import ErrorService from '../../services/error-service';
+import CarsModel from '../model';
 
 export const getCar: RequestHandler<
 { id: string | undefined },
-CarModel | ResponseError,
+CarViewModel | ResponseError,
 {},
 {}
 > = async (req, res) => {
@@ -13,10 +14,10 @@ CarModel | ResponseError,
     return;
   }
  try {
-  const car = await CarService.getCar(id);
+  const car = await CarsModel.getCar(id);
   res.status(200).json(car);
  } catch (error) {
-  const message = error instanceof Error ? error.message : 'request error';
-  res.status(400).json({ error: message });
+  const [status, errorResponse] = ErrorService.handleError(error);
+  res.status(status).json(errorResponse);
  }
 };

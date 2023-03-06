@@ -19,6 +19,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/naming-convention': [0],
     '@typescript-eslint/indent': [0],
-    'import/prefer-default-export': [0]
+    'import/prefer-default-export': [0],
+    'max-classes-per-file': [0]
   },
 };

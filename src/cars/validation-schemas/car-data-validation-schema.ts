@@ -1,5 +1,4 @@
 import * as yup from 'yup';
-import { CarData } from '../types';
 import yearSchema from './property-schemas/year-schema';
 import nameSchema from './property-schemas/name-schema';
 import originSchema from './property-schemas/origin-schema';

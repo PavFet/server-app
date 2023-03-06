@@ -1,7 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
+import carsRouter from './cars';
 import config from './config';
-import carsRouter from './controllers/cars-controller';
 import { connectMySql } from './services/my-sql';
 
 const server = express();

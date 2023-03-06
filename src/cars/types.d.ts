@@ -1,4 +1,4 @@
-type PrivateCarModel = {
+type PrivateViewCarModel = {
   'id': number,
   'name': string,
   'technical_characteristics': {
@@ -15,3 +15,7 @@ type PrivateCarModel = {
 };
 
 type CarViewModel = PrivateViewCarModel & RowDataPacket;
+
+type CarData = Omit<PrivateViewCarModel, 'id'>;
+
+type PartialCarData = Partial<CarData>;
