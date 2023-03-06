@@ -1,7 +1,7 @@
 create table bvugtsxw5tbh0ey2c4c5.users (
   id int1 unsigned primary key auto_increment,
   email varchar(64) not null,
-  password varchar(32) not null,
+  password varchar(64) not null,
   name varchar(64) not null,
   surname varchar(64) not null,
   role enum('USER', 'ADMIN') default ('USER'),
