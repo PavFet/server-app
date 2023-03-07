@@ -9,6 +9,14 @@ export type UserEntity = {
   role: 'ADMIN' | 'USER',
 };
 
+export type RegistrationData = {
+  email: string,
+  name: string,
+  surname: string,
+  password: string,
+  repeatConfirmation: string,
+};
+
 export type UserEntityRow = UserEntity & RowDataPacket;
 
 export type UserViewModel = Omit<UserEntity, 'password'>;
