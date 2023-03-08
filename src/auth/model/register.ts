@@ -2,8 +2,8 @@ import { AuthSuccessResponse, RegistrationData } from 'auth/types';
 import registrationDataValidationSchema from 'auth/validation-schemas/registration-data-validation-schema';
 import { RequestHandler } from 'express';
 import ErrorService from 'services/error-service';
-import tokenService from 'services/token-service';
 import UserModel from '.';
+import { createAuthSuccessResponse } from './helpers/create-auth-success-response';
 
 export const register: RequestHandler<
   {},
@@ -12,22 +12,17 @@ export const register: RequestHandler<
   {}
 > = async (req, res) => {
   try {
-      const registrationData = registrationDataValidationSchema
+      const { repeatConfirmation, ...registrationData } = registrationDataValidationSchema
     .validateSync(req.body, { abortEarly: false });
 
-    const user = await UserModel.createUser({
-      email: registrationData.email,
-      password: registrationData.password,
-      name: registrationData.name,
-      surname: registrationData.surname,
-    });
+    const emailAvailable = await UserModel.emailAvailable(registrationData.email);
+    if (!emailAvailable) throw new Error(`Email ${registrationData.email} already exist`);
 
-  const token = tokenService.createToken(user.email, user.role);
+    const user = await UserModel.createUser(registrationData);
 
-  res.status(200).json({
-    token,
-    user,
-  });
+    const authSuccessResponse = createAuthSuccessResponse(user);
+
+    res.status(200).json(authSuccessResponse);
   } catch (err) {
     const [status, errorResponse] = ErrorService.handleError(err);
     res.status(status).json(errorResponse);

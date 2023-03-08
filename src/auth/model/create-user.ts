@@ -1,6 +1,7 @@
 import mysql from 'mysql2/promise';
 import config from 'config';
 import { UserEntityRow } from 'auth/types';
+import BcryptService from 'services/bcrypt-service';
 import SQL from './sql';
 
 type UserData = {
@@ -22,7 +23,7 @@ export const createUser = async (userData: UserData): Promise<UserEntityRow> => 
     `;
   const preparedSqlData = [
     userData.email,
-    userData.password,
+    BcryptService.hash(userData.password),
     userData.name,
     userData.surname,
   ];
