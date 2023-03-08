@@ -1,4 +1,5 @@
-import express from 'express';
+import express, { RequestHandler } from 'express';
+import authMiddleware from 'middlewares/auth-middleware';
 import { createCar } from './mutations/create-car';
 import { deleteCar } from './mutations/delete-car';
 import { upadateCar } from './mutations/update-car';
@@ -10,9 +11,9 @@ const carsRouter = express.Router();
 
 carsRouter.get('/', getCars);
 carsRouter.get('/:id', getCar);
-carsRouter.post('/', createCar);
 
-carsRouter.patch('/:id', upadateCar);
-carsRouter.delete('/:id', deleteCar);
+carsRouter.post('/', authMiddleware, createCar);
+carsRouter.patch('/:id', authMiddleware, upadateCar as RequestHandler);
+carsRouter.delete('/:id', authMiddleware, deleteCar as RequestHandler);
 
 export default carsRouter;

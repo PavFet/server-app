@@ -1,17 +1,10 @@
 import config from 'config';
 import jwt from 'jsonwebtoken';
 
-type Data = {
-  email: UserEntity['email'],
-  role: UserEntity['role'],
-};
-
-type DecodedData = Data & { iat: number };
-
-const createToken = (data: Data) => jwt
+const createToken = (data: AuthData) => jwt
   .sign(data, config.secret.jwtTokenKey);
 
-const decodeToken = (token: string) => jwt.decode(token) as (DecodedData | null);
+const decodeToken = (token: string) => jwt.decode(token) as (DecodedAuthData | null);
 
 const TokenService = {
   createToken,

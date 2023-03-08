@@ -8,6 +8,12 @@ export class ServerSetupError extends Error {
   }
 }
 
+export class AuthorizationError extends Error {
+  constructor() {
+    super('Unauthorized');
+  }
+}
+
 const handleError = (err: unknown): [number, ResponseError] => {
   let status = 400;
   const errorResponse: ResponseError = {
