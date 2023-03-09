@@ -1,5 +1,5 @@
 create table bvugtsxw5tbh0ey2c4c5.users (
-  id int1 unsigned primary key auto_increment,
+  id int4 unsigned primary key auto_increment,
   email varchar(64) not null UNIQUE,
   password varchar(64) not null,
   name varchar(64) not null,
