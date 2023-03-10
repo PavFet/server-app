@@ -1,5 +1,6 @@
 import mysql from 'mysql2/promise';
 import config from 'config';
+import { CarViewModel } from 'cars/types';
 
 export const deleteCar = async (id: string): Promise<void> => {
   const mySqlConnection = await mysql.createConnection(config.db);

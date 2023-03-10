@@ -1,4 +1,5 @@
 import * as yup from 'yup';
+import { PartialCarBody } from 'cars/types';
 import yearSchema from './property-schemas/year-schema';
 import nameSchema from './property-schemas/name-schema';
 import originSchema from './property-schemas/origin-schema';
@@ -7,7 +8,7 @@ import {
  cylindersSchema, displacementSchema, horsepowerSchema, milesPerGallonSchema, weightInLbsSchema,
 } from './property-schemas/technical-characteristics-schema';
 
-const partialCarDataValidationSchema: yup.ObjectSchema<PartialCarData> = yup.object({
+const partialCarDataValidationSchema: yup.ObjectSchema<PartialCarBody> = yup.object({
   name: nameSchema,
   year: yearSchema,
   origin: originSchema,

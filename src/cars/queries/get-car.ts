@@ -1,5 +1,6 @@
+import { CarViewModel } from 'cars/types';
 import { RequestHandler } from 'express';
-import ErrorService from '../../services/error-service';
+import ErrorService, { ServerSetupError } from '../../services/error-service';
 import CarsModel from '../model';
 
 export const getCar: RequestHandler<
@@ -14,7 +15,9 @@ CarViewModel | ResponseError,
     return;
   }
  try {
+  if (id === undefined) throw new ServerSetupError();
   const car = await CarsModel.getCar(id);
+
   res.status(200).json(car);
  } catch (error) {
   const [status, errorResponse] = ErrorService.handleError(error);

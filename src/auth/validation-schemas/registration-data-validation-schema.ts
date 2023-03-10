@@ -1,7 +1,7 @@
 import * as yup from 'yup';
-import { RegistrationData } from '../types';
+import { RegistrationBody } from '../types';
 
-const registrationDataValidationSchema: yup.ObjectSchema<RegistrationData> = yup.object({
+const registrationDataValidationSchema: yup.ObjectSchema<RegistrationBody> = yup.object({
   email: yup.string()
     .required('email is required')
     .email('incorrect email format'),
@@ -15,7 +15,7 @@ const registrationDataValidationSchema: yup.ObjectSchema<RegistrationData> = yup
     .matches(/[0-9]{1}/, 'password must have at least one number')
     .matches(/[#?!@$%^&*-]{1}/, 'password must have at least special character'),
 
-  repeatConfirmation: yup.string()
+    passwordConfirmation: yup.string()
     .required('password must be confirmed')
     // .when('password', (([password], schema) => {
     //   if (password) return schema.matches(new RegExp(password, 'g'));

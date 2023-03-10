@@ -1,11 +1,12 @@
 import mysql from 'mysql2/promise';
 import config from 'config';
 import { colonObjectQueryFormat } from 'services/my-sql';
+import { CarViewModel, PartialCarBody } from 'cars/types';
 import SQL from './sql';
 
 type PrepareSqlResult = [string, Record<string, string>];
 
-type PrepareSql = (carData: PartialCarData) => PrepareSqlResult;
+type PrepareSql = (carData: PartialCarBody) => PrepareSqlResult;
 
 const prepareImagesSql: PrepareSql = (carData) => {
   const bindingsOrNull = carData.images?.reduce((prevBindings, img, i) => ({
@@ -64,7 +65,7 @@ const prepareCarSql: PrepareSql = (carData) => {
 
 export const updateCar = async (
   id: string,
-  carData: PartialCarData,
+  carData: PartialCarBody,
 ): Promise<CarViewModel> => {
   const mySqlConnection = await mysql.createConnection(config.db);
   mySqlConnection.config.queryFormat = colonObjectQueryFormat;

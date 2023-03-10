@@ -1,4 +1,5 @@
 import * as yup from 'yup';
+import { CarBody } from 'cars/types';
 import yearSchema from './property-schemas/year-schema';
 import nameSchema from './property-schemas/name-schema';
 import originSchema from './property-schemas/origin-schema';
@@ -7,7 +8,7 @@ import {
   cylindersSchema, displacementSchema, horsepowerSchema, milesPerGallonSchema, weightInLbsSchema,
  } from './property-schemas/technical-characteristics-schema';
 
-export const carDataValidationSchema: yup.ObjectSchema<CarData> = yup.object({
+export const carDataValidationSchema: yup.ObjectSchema<CarBody> = yup.object({
   name: nameSchema.required('name is required'),
   year: yearSchema.required('year is required'),
   origin: originSchema.required('origin is required'),

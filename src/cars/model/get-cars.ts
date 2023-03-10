@@ -1,5 +1,6 @@
 import mysql from 'mysql2/promise';
 import config from 'config';
+import { CarViewModel } from 'cars/types';
 import SQL from './sql';
 
 export const getCars = async (): Promise<CarViewModel[]> => {

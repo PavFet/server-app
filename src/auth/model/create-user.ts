@@ -1,17 +1,10 @@
 import mysql from 'mysql2/promise';
 import config from 'config';
-import { UserEntityRow } from 'auth/types';
+import { RegistrationData, UserEntityRow } from 'auth/types';
 import BcryptService from 'services/bcrypt-service';
 import SQL from './sql';
 
-type UserData = {
-  email: string,
-  password: string,
-  name: string,
-  surname: string,
-};
-
-export const createUser = async (userData: UserData): Promise<UserEntityRow> => {
+export const createUser = async (userData: RegistrationData): Promise<UserEntityRow> => {
   const mySqlConnection = await mysql.createConnection(config.db);
 
   const preparedSql = `
@@ -30,7 +23,6 @@ export const createUser = async (userData: UserData): Promise<UserEntityRow> => 
 
   const [queryResultsArr] = await mySqlConnection.query(preparedSql, preparedSqlData);
   const [createdUser] = (queryResultsArr as UserEntityRow[][])[1];
-  console.log(preparedSql, preparedSqlData);
   await mySqlConnection.end();
 
   return createdUser;

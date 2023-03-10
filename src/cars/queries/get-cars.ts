@@ -1,3 +1,4 @@
+import { CarViewModel } from 'cars/types';
 import { RequestHandler } from 'express';
 import ErrorService from '../../services/error-service';
 import CarsModel from '../model';

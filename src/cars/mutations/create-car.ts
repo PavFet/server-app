@@ -1,5 +1,7 @@
+import UserModel from 'auth/model';
+import { CarViewModel, PartialCarBody } from 'cars/types';
 import { RequestHandler } from 'express';
-import ErrorService from 'services/error-service';
+import ErrorService, { ServerSetupError } from 'services/error-service';
 import CarsModel from '../model';
 
 import { carDataValidationSchema } from '../validation-schemas/car-data-validation-schema';
@@ -7,14 +9,17 @@ import { carDataValidationSchema } from '../validation-schemas/car-data-validati
 export const createCar: RequestHandler<
 {}, // Parametrai
 CarViewModel | ResponseError, // Atsakymo tipas
-CarData, // Body - gaunami duomenys
+PartialCarBody, // Body - gaunami duomenys
 {} // QueryParams - duomenis siunciant GET uzklausas, pvz: ?min-18max=18
 > = async (req, res) => {
   try {
-    const carData: CarData = carDataValidationSchema
+    const carData = carDataValidationSchema
       .validateSync(req.body, { abortEarly: false });
 
-    const createdCar = await CarsModel.createCar(carData);
+    if (req.authData === undefined) throw new ServerSetupError();
+    const user = await UserModel.getUserByEmail(req.authData.email);
+
+    const createdCar = await CarsModel.createCar({ ...carData, ownerId: user.id });
     res.status(201).json(createdCar);
   } catch (err) {
     const [status, errorResponse] = ErrorService.handleError(err);

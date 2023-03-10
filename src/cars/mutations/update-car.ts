@@ -1,3 +1,4 @@
+import { CarViewModel, PartialCarBody } from 'cars/types';
 import { RequestHandler } from 'express';
 import ErrorService, { ServerSetupError } from '../../services/error-service';
 import CarsModel from '../model';
@@ -6,7 +7,7 @@ import partialCarDataValidationSchema from '../validation-schemas/partial-car-da
 export const upadateCar: RequestHandler<
   { id: string | undefined },
   CarViewModel | ResponseError,
-  PartialCarData,
+  PartialCarBody,
   {}
 > = async (req, res) => {
   const { id } = req.params;

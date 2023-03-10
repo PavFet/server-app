@@ -1,9 +1,9 @@
 import { createUser } from './create-user';
 import { emailAvailable } from './email-available';
-import { getUser } from './get-user';
+import { getUserByEmail } from './get-user-by-email';
 
 const UserModel = {
-  getUser,
+  getUserByEmail,
   createUser,
   emailAvailable,
 };
