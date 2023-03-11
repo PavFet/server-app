@@ -6,7 +6,7 @@
 ## Project Setup
   * copy file [.env.example](.env.example) nad rename it to __.env__
   * define constants if file __.env__
-  * instal libraries - open terminal in root directory and run command:
+  * install libraries - open terminal in root directory and run command:
   ```bash
   npm i
   ```
